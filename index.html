@@ -68,6 +68,53 @@
                 padding: 0.75rem 1rem; /* Adjust padding on small screens */
             }
         }
+
+        /* New styles for service grid */
+        .services-section {
+            padding: 2rem 0; /* Add padding around the section */
+            background-color: #f5f5f5; /* Light gray background */
+            text-align: center; /* Center-align text */
+        }
+
+        .services-section h2 {
+            font-size: 2rem; /* Large font size for title */
+            color: #333333; /* Dark text color for contrast */
+            margin-bottom: 1rem; /* Space below title */
+        }
+
+        .services-section p {
+            color: #666666; /* Medium-dark text color for subtitle */
+            margin-bottom: 2rem; /* Space below subtitle */
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Four columns of equal width */
+            gap: 1rem; /* Space between items */
+        }
+
+        .service-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            background-color: #ffffff; /* White background */
+            transition: transform 0.3s ease; /* Smooth transform transition */
+        }
+
+        .service-item img {
+            width: 100%; /* Full width image */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .service-item h3 {
+            font-size: 1.25rem; /* Medium font size for service title */
+            color: #333333; /* Dark text color */
+            margin: 0.5rem 0; /* Space around title */
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px); /* Slight lift on hover */
+        }
     </style>
 </head>
 <body>
@@ -121,5 +168,47 @@
             </div>
         </nav>
     </div>
-</body>
-</html>
+
+    <!-- New Services Section -->
+    <div class="services-section">
+        <h2>Our Services</h2>
+        <p>Flawless construction powered by deep expertise.</p>
+        <div class="container">
+            <div class="service-grid">
+                <div class="service-item">
+                    <img src="images/pre_design.jpg" alt="Pre-Design">
+                    <h3>Pre-Design</h3>
+                </div>
+                <div class="service-item">
+                    <img src="images/interior_design.jpg" alt="Interior Design">
+                    <h3>Interior Design</h3>
+                </div>
+                <div class="service-item">
+                    <img src="images/exterior_design.jpg" alt="Exterior Design">
+                    <h3>Exterior Design</h3>
+                </div>
+                <div class="service-item">
+                    <img src="images/furniture.jpg" alt="Furniture">
+                    <h3>Furniture</h3>
+                </div>
+                <div class="service-item">
+                    <img src="images/Residential.jpg" alt="Residential">
+                    <h3>Residential</h3>
+                </div>
+                <div class="service-item">
+                    <img src="images/commercial.jpg" alt="Commercial">
+                    <h3>Commercial</h3>
+                </div>
+                <div class="service-item">
+                    <img src="images/Renovation.jpg" alt="Renovation">
+                    <h3>Renovation</h3>
+                </div>
+                <div class="service-item">
+                    <img src="images/consultation.jpg" alt="Consultation">
+                    <h3>Consultation</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
