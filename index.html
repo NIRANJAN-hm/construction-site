@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SRI GURU CONSTRUCTIONS</title>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
@@ -10,31 +12,31 @@
     <style>
         /* Navbar styling */
         .navbar {
-            background-color: #ffffff; /* White background */
-            padding: 0.5rem 1rem; /* Slightly increased vertical padding */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            background-color: #ffffff;
+            padding: 0.5rem 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .navbar-brand img {
-            width: 140px; /* Larger logo size */
-            height: auto; /* Maintain aspect ratio */
+            width: 140px;
+            height: auto;
         }
 
         .navbar-nav .nav-link {
-            color: #333333 !important; /* Dark text for contrast */
-            font-weight: 600; /* Semi-bold font weight for better visibility */
-            font-size: 1rem; /* Standard font size */
-            text-transform: capitalize; /* Capitalize text */
-            transition: color 0.3s ease; /* Smooth color transition */
+            color: #333333 !important;
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: capitalize;
+            transition: color 0.3s ease;
         }
 
         .navbar-nav .nav-link:hover {
-            color: #007bff !important; /* Blue text on hover */
-            text-decoration: none; /* Remove underline */
+            color: #007bff !important;
+            text-decoration: none;
         }
 
         .navbar-toggler {
-            border-color: #333333; /* Dark border for the toggle button */
+            border-color: #333333;
         }
 
         .navbar-toggler-icon {
@@ -42,78 +44,196 @@
         }
 
         .dropdown-menu {
-            background-color: #f8f9fa; /* Light background for dropdown menu */
-            border: none; /* Remove default border */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            background-color: #f8f9fa;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .dropdown-item {
-            color: #333333; /* Dark text for dropdown items */
-            font-size: 1rem; /* Standard font size */
-            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+            color: #333333;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .dropdown-item:hover {
-            background-color: #e9ecef; /* Light gray background on hover */
-            color: #007bff; /* Blue text on hover */
+            background-color: #e9ecef;
+            color: #007bff;
         }
 
-        /* Responsive adjustments */
         @media (max-width: 768px) {
             .navbar-nav {
-                text-align: center; /* Center-align items on small screens */
+                text-align: center;
             }
 
             .navbar-nav .nav-link {
-                padding: 0.75rem 1rem; /* Adjust padding on small screens */
+                padding: 0.75rem 1rem;
             }
         }
 
         /* New styles for service grid */
         .services-section {
-            padding: 2rem 0; /* Add padding around the section */
-            background-color: #f5f5f5; /* Light gray background */
-            text-align: center; /* Center-align text */
+            padding: 2rem 0;
+            background-color: #f5f5f5;
+            text-align: center;
         }
 
         .services-section h2 {
-            font-size: 2rem; /* Large font size for title */
-            color: #333333; /* Dark text color for contrast */
-            margin-bottom: 1rem; /* Space below title */
+            font-size: 2rem;
+            color: #333333;
+            margin-bottom: 1rem;
         }
 
         .services-section p {
-            color: #666666; /* Medium-dark text color for subtitle */
-            margin-bottom: 2rem; /* Space below subtitle */
+            color: #666666;
+            margin-bottom: 2rem;
         }
 
         .service-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* Four columns of equal width */
-            gap: 1rem; /* Space between items */
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
         }
 
         .service-item {
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-            background-color: #ffffff; /* White background */
-            transition: transform 0.3s ease; /* Smooth transform transition */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            transition: transform 0.3s ease;
         }
 
         .service-item img {
-            width: 100%; /* Full width image */
-            height: auto; /* Maintain aspect ratio */
+            width: 100%;
+            height: auto;
         }
 
         .service-item h3 {
-            font-size: 1.25rem; /* Medium font size for service title */
-            color: #333333; /* Dark text color */
-            margin: 0.5rem 0; /* Space around title */
+            font-size: 1.25rem;
+            color: #333333;
+            margin: 0.5rem 0;
+            text-align: center;
         }
 
         .service-item:hover {
-            transform: translateY(-5px); /* Slight lift on hover */
+            transform: translateY(-5px);
+        }
+
+        /* Footer styling */
+        footer {
+            background: linear-gradient(180deg, #333, #000);
+            color: #fff;
+            padding: 3rem 0;
+            font-size: 0.875rem;
+            /* Removed the border-top property */
+        }
+
+        footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .footer-top {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+
+        .footer-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            flex: 1;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s, padding-left 0.3s;
+            padding-left: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: #007bff;
+            padding-left: 1rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .social-links {
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #007bff;
+            transform: scale(1.1);
+        }
+
+        .copyright {
+            font-size: 0.875rem;
+            color: #ddd;
+            margin-bottom: 1rem;
+        }
+
+        .whatsapp {
+            color: white;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            padding: 12px 18px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .whatsapp:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+
+        .whatsapp i {
+            margin-right: 8px;
         }
     </style>
 </head>
@@ -211,4 +331,60 @@
         </div>
     </div>
 
-   
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-nav">
+                    <div class="footer-section">
+                        <h3>About Us</h3>
+                        <ul>
+                            <li><a href="#">Our Story</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Pre-Design</a></li>
+                            <li><a href="#">Interior Design</a></li>
+                            <li><a href="#">Exterior Design</a></li>
+                            <li><a href="#">Furniture</a></li>
+                            <li><a href="#">Residential</a></li>
+                            <li><a href="#">Commercial</a></li>
+                            <li><a href="#">Renovation</a></li>
+                            <li><a href="#">Consultation</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Contact Us</h3>
+                        <ul>
+                            <li><a href="#">Email</a></li>
+                            <li><a href="#">Phone</a></li>
+                            <li><a href="#">Location</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Follow Us</h3>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <a href="#" class="whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="copyright">&copy; 2024 SRI GURU CONSTRUCTIONS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
