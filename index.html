@@ -118,6 +118,21 @@
             transform: translateY(-5px);
         }
 
+        /* Mobile view adjustments for service grid */
+        @media (max-width: 768px) {
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+                gap: 0.5rem; /* Adjust spacing between items */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .service-grid {
+                grid-template-columns: 1fr; /* 1 column on mobile phones */
+                gap: 0.5rem; /* Adjust spacing between items */
+            }
+        }
+
         /* Footer styling */
         footer {
             background: linear-gradient(180deg, #333, #000);
@@ -377,9 +392,9 @@
                 </div>
             </div>
         </div>
-                <a href="#" class="whatsapp">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
-                </a>
+        <a href="#" class="whatsapp">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
         <div class="footer-bottom">
             <div class="container">
                 <p class="copyright">&copy; 2024 SRI GURU CONSTRUCTIONS. All rights reserved.</p>
