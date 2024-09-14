@@ -10,7 +10,17 @@
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     <style>
-        /* Navbar styling */
+        html, body {
+            height: 100%; /* Ensure the body takes the full height of the viewport */
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body {
+            flex: 1;
+        }
+
         .navbar {
             background-color: #ffffff;
             padding: 0.5rem 1rem;
@@ -70,7 +80,6 @@
             }
         }
 
-        /* New styles for service grid */
         .services-section {
             padding: 2rem 0;
             background-color: #f5f5f5;
@@ -118,44 +127,42 @@
             transform: translateY(-5px);
         }
 
-        /* Mobile view adjustments for service grid */
         @media (max-width: 768px) {
             .service-grid {
-                grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
-                gap: 0.5rem; /* Adjust spacing between items */
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
             }
 
             .services-section h2 {
-                font-size: 1.5rem; /* Smaller font size on tablets */
+                font-size: 1.5rem;
             }
 
             .service-item h3 {
-                font-size: 1.125rem; /* Smaller font size on tablets */
+                font-size: 1.125rem;
             }
         }
 
         @media (max-width: 576px) {
             .service-grid {
-                grid-template-columns: 1fr; /* 1 column on mobile phones */
-                gap: 0.5rem; /* Adjust spacing between items */
+                grid-template-columns: repeat(1, 1fr);
+                gap: 0.5rem;
             }
 
             .services-section h2 {
-                font-size: 1.25rem; /* Even smaller font size on mobile phones */
+                font-size: 1.25rem;
             }
 
             .service-item h3 {
-                font-size: 1rem; /* Smaller font size on mobile phones */
+                font-size: 1rem;
             }
         }
 
-        /* Footer styling */
         footer {
             background: linear-gradient(180deg, #333, #000);
             color: #fff;
             padding: 3rem 0;
             font-size: 0.875rem;
-            /* Removed the border-top property */
+            margin-top: auto; /* Pushes the footer to the bottom of the page */
         }
 
         footer .container {
@@ -217,108 +224,96 @@
 
         .footer-bottom {
             text-align: center;
-            margin-top: 2rem;
+            padding: 1rem 0;
+            background: #222;
         }
 
-        .social-links {
-            margin-bottom: 1rem;
+        .footer-bottom .copyright {
+            margin: 0;
         }
 
         .social-links a {
             color: #fff;
-            font-size: 1.5rem;
-            margin: 0 15px;
-            transition: color 0.3s, transform 0.3s;
+            font-size: 1.25rem;
+            margin-right: 0.5rem;
+            transition: color 0.3s;
         }
 
         .social-links a:hover {
             color: #007bff;
-            transform: scale(1.1);
-        }
-
-        .copyright {
-            font-size: 0.875rem;
-            color: #ddd;
-            margin-bottom: 1rem;
         }
 
         .whatsapp {
-            color: white;
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25D366;
-            padding: 12px 18px;
+            bottom: 1rem;
+            right: 1rem;
+            background-color: #25d366;
+            color: #fff;
+            padding: 0.5rem 1rem;
             border-radius: 50px;
-            text-decoration: none;
-            font-size: 1rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             display: flex;
             align-items: center;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .whatsapp:hover {
-            background-color: #128C7E;
-            transform: scale(1.1);
+            gap: 8px;
+            text-decoration: none;
+            font-size: 1rem;
         }
 
         .whatsapp i {
-            margin-right: 8px;
+            font-size: 1.5rem;
         }
     </style>
 </head>
 <body>
-    <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="images/logo.jpg" alt="SRI GURU CONSTRUCTIONS">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="About.html" target="_blank">About Us</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Services
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="event.html">Interior Design</a></li>
-                                <li><a class="dropdown-item" href="restoration.html">Exterior Design</a></li>
-                                <li><a class="dropdown-item" href="corporate.html">Pre Design</a></li>
-                                <li><a class="dropdown-item" href="frame.html">Residential</a></li>
-                                <li><a class="dropdown-item" href="family.html">Commercial</a></li>
-                                <li><a class="dropdown-item" href="album.html">Renovation</a></li>
-                                <li><a class="dropdown-item" href="album.html">Consultation</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link FAQ" href="FAQ.html">FAQs</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link contact" href="contact.html">Contact Us</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link btn btn-primary text-white" href="#">Let's Start</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="tel:+91 7795 444 954"><i class="fas fa-phone-alt"></i> +91 7795 444 954</a>
-                        </li>
-                    </ul>
-                </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="logo.png" alt="SRI GURU CONSTRUCTIONS">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="About.html" target="_blank">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="event.html">Interior Design</a></li>
+                            <li><a class="dropdown-item" href="restoration.html">Exterior Design</a></li>
+                            <li><a class="dropdown-item" href="corporate.html">Pre Design</a></li>
+                            <li><a class="dropdown-item" href="frame.html">Residential</a></li>
+                            <li><a class="dropdown-item" href="family.html">Commercial</a></li>
+                            <li><a class="dropdown-item" href="album.html">Renovation</a></li>
+                            <li><a class="dropdown-item" href="album.html">Consultation</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link FAQ" href="FAQ.html">FAQs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link contact" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white" href="#">Let's Start</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tel:+91 7795 444 954"><i class="fas fa-phone-alt"></i> +91 7795 444 954</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-    </div>
+        </div>
+    </nav>
 
     <!-- New Services Section -->
     <div class="services-section">
