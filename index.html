@@ -100,6 +100,7 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             background-color: #ffffff;
             transition: transform 0.3s ease;
+            text-align: center;
         }
 
         .service-item img {
@@ -111,7 +112,6 @@
             font-size: 1.25rem;
             color: #333333;
             margin: 0.5rem 0;
-            text-align: center;
         }
 
         .service-item:hover {
@@ -124,12 +124,28 @@
                 grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
                 gap: 0.5rem; /* Adjust spacing between items */
             }
+
+            .services-section h2 {
+                font-size: 1.5rem; /* Smaller font size on tablets */
+            }
+
+            .service-item h3 {
+                font-size: 1.125rem; /* Smaller font size on tablets */
+            }
         }
 
         @media (max-width: 576px) {
             .service-grid {
                 grid-template-columns: 1fr; /* 1 column on mobile phones */
                 gap: 0.5rem; /* Adjust spacing between items */
+            }
+
+            .services-section h2 {
+                font-size: 1.25rem; /* Even smaller font size on mobile phones */
+            }
+
+            .service-item h3 {
+                font-size: 1rem; /* Smaller font size on mobile phones */
             }
         }
 
@@ -259,13 +275,13 @@
                 <a class="navbar-brand" href="#">
                     <img src="images/logo.jpg" alt="SRI GURU CONSTRUCTIONS">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="About.html" target="_blank">About Us</a>
