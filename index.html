@@ -25,24 +25,20 @@
             flex: 1;
         }
 
-        .navbar {
-            background-color: #ffffff;
-            padding: 0.5rem 1rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
         .navbar-brand img {
             width: 140px;
             height: auto;
         }
 
         .navbar-nav .nav-link {
-            color: #333333 !important;
-            font-weight: 600;
-            font-size: 1rem;
-            text-transform: capitalize;
-            transition: color 0.3s ease;
+            color: white !important; /* Ensure text color is white */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional shadow for readability */
         }
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background for contrast */
+        }
+
 
         .navbar-nav .nav-link:hover {
             color: #007bff !important;
@@ -587,10 +583,11 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background: url('images/facade-modern-house.jpg') no-repeat center center; background-size: cover; padding: 1rem;">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="images/2D LOGO-01.png" alt="SRI GURU CONSTRUCTIONS">
+                <img src="images/logo.jpg" alt="SRI GURU CONSTRUCTIONS">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -598,13 +595,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="#" style="color: white; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="About.html" target="_blank">About Us</a>
+                        <a class="nav-link" href="About.html" target="_blank" style="color: white; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);">About Us</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);">
                             Services
                         </a>
                         <ul class="dropdown-menu">
@@ -618,10 +615,10 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link FAQ" href="FAQ.html">FAQs</a>
+                        <a class="nav-link FAQ" href="FAQ.html" style="color: white; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);">FAQs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link contact" href="contact.html">Contact Us</a>
+                        <a class="nav-link contact" href="contact.html" style="color: white; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);">Contact Us</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
@@ -629,7 +626,7 @@
                         <a class="nav-link btn btn-primary text-white" href="#">Let's Start</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="tel:+91 7795 444 954"><i class="fas fa-phone-alt"></i> +91 7795 444 954</a>
+                        <a class="nav-link" href="tel:+91 7795 444 954" style="color: white; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);"><i class="fas fa-phone-alt"></i> +91 7795 444 954</a>
                     </li>
                 </ul>
             </div>
