@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <style>
         html, body {
             height: 100%; /* Ensure the body takes the full height of the viewport */
@@ -157,6 +161,92 @@
             }
         }
 
+        /* New Section Styles */
+        #construction-section {
+            position: relative; /* Container must be positioned relatively */
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        #construction-section img {
+            width: 100%;
+            height: auto;
+        }
+
+        #construction-section .form-container {
+            position: absolute; /* Form container is positioned absolutely */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Center the form container */
+            width: 100%;
+            max-width: 500px; /* Adjust the max-width as needed */
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #construction-section .form-container h3 {
+            margin-top: 0;
+        }
+
+        #construction-section form input,
+        #construction-section form textarea {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        #construction-section form button {
+            background-color: orange;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        #construction-section form button:hover {
+            background-color: #e69500;
+        }
+
+        .services-section, .why-choose-us {
+        padding: 20px;
+        text-align: center;
+        }
+
+        .choose-us-cards {
+            display: flex;
+            justify-content: space-around;
+            align-items: stretch;
+            flex-wrap: wrap;
+        }
+
+        .choose-us-card {
+            flex: 1; /* Equal size for each card */
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .choose-us-card img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .choose-us-cards {
+                flex-direction: column; /* Stack cards on smaller screens */
+            }
+        }
+        
         footer {
             background: linear-gradient(180deg, #333, #000);
             color: #fff;
@@ -315,7 +405,24 @@
         </div>
     </nav>
 
-    <!-- New Services Section -->
+    <!-- New Construction Section -->
+    <section id="construction-section">
+        <img src="images/const.jpg" alt="Construction Image">
+        <div class="form-container">
+            <h3>Get a Free Quote!</h3>
+            <p>As soon as you confirm your request to hire us, we'll be the only team you have to talk till the job is done.</p>
+            <form id="quote-form">
+                <input type="text" name="name" placeholder="Enter your name" required>
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <input type="tel" name="phone" placeholder="Enter your phone number" required>
+                <textarea name="message" placeholder="Add your Message" required></textarea>
+                <button type="submit">REQUEST A CALLBACK</button>
+            </form>
+            <p style="margin-top: 10px;">100% privacy Guaranteed.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
     <div class="services-section">
         <h2>Our Services</h2>
         <p>Flawless construction powered by deep expertise.</p>
@@ -353,6 +460,34 @@
                     <img src="images/consultation.jpg" alt="Consultation">
                     <h3>Consultation</h3>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Why Choose Us Section -->
+    <div class="why-choose-us">
+        <h2>Why Choose Us?</h2>
+        <p>We ensure peace of mind, trust, and transparent house construction.</p>
+        <div class="choose-us-cards">
+            <div class="choose-us-card">
+                <img src="https://grandjyothiconstruction.com/wp-content/uploads/2023/10/100-Vaastu-Homes.png" alt="100% Vaastu Homes">
+                <h3>100% Vaastu Homes</h3>
+                <p>We build dream spaces that are 100% Vaastu compatible and ensure peace of mind.</p>
+            </div>
+            <div class="choose-us-card">
+                <img src="https://grandjyothiconstruction.com/wp-content/uploads/2023/10/Budget-Friendly.png" alt="Budget Friendly">
+                <h3>Budget Friendly</h3>
+                <p>We are dedicated to delivering constructions, both residential and commercial, keeping your budget in mind.</p>
+            </div>
+            <div class="choose-us-card">
+                <img src="https://grandjyothiconstruction.com/wp-content/uploads/2023/10/On-Time-Delivery.png" alt="On-Time Delivery">
+                <h3>On-Time Delivery</h3>
+                <p>We are committed to deadlines, so you don’t have to wait longer to live in your dream home.</p>
+            </div>
+            <div class="choose-us-card">
+                <img src="https://grandjyothiconstruction.com/wp-content/uploads/2023/10/100-Quality-construction.png" alt="100% Quality Construction">
+                <h3>100% Quality Construction</h3>
+                <p>We are known for delivering high-quality constructions, following all essential standard parameters.</p>
             </div>
         </div>
     </div>
