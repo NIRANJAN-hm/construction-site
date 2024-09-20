@@ -161,56 +161,77 @@
             }
         }
 
-        /* New Section Styles */
-        #construction-section {
-            position: relative; /* Container must be positioned relatively */
-            padding: 20px;
-            background-color: #f4f4f4;
+        #contact-us {
+            background: url('images/facade-modern-house.jpg') no-repeat center center;
+            background-size: cover;
+            padding: 50px 20px;
+            color: white;
         }
 
-        #construction-section img {
-            width: 100%;
-            height: auto;
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        #construction-section .form-container {
-            position: absolute; /* Form container is positioned absolutely */
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%); /* Center the form container */
-            width: 100%;
-            max-width: 500px; /* Adjust the max-width as needed */
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .contact-info {
+            max-width: 45%;
+            text-align: left;
         }
 
-        #construction-section .form-container h3 {
-            margin-top: 0;
-        }
-
-        #construction-section form input,
-        #construction-section form textarea {
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 100%;
-            padding: 10px;
+        .contact-info h2 {
+            font-size: 24px;
             margin-bottom: 10px;
         }
 
-        #construction-section form button {
-            background-color: orange;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            width: 100%;
+        .contact-info p {
+            font-size: 18px;
+            margin: 5px 0;
         }
 
-        #construction-section form button:hover {
-            background-color: #e69500;
+        .contact-form {
+            max-width: 45%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
         }
+
+        .contact-form h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        .contact-form input, .contact-form select, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            background: #ff9900;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background: #e68a00;
+        }
+
 
         .services-section, .why-choose-us {
         padding: 20px;
@@ -615,22 +636,30 @@
         </div>
     </nav>
 
-    <!-- New Construction Section -->
-    <section id="construction-section">
-        <img src="images/const.jpg" alt="Construction Image">
-        <div class="form-container">
-            <h3>Get a Free Quote!</h3>
-            <p>As soon as you confirm your request to hire us, we'll be the only team you have to talk till the job is done.</p>
-            <form id="quote-form">
-                <input type="text" name="name" placeholder="Enter your name" required>
-                <input type="email" name="email" placeholder="Enter your email" required>
-                <input type="tel" name="phone" placeholder="Enter your phone number" required>
-                <textarea name="message" placeholder="Add your Message" required></textarea>
-                <button type="submit">REQUEST A CALLBACK</button>
-            </form>
-            <p style="margin-top: 10px;">100% privacy Guaranteed.</p>
+    <!-- Contact Us Section -->
+    <section id="contact-us" style="position: relative; background: url('images/facade-modern-house.jpg') no-repeat center center; background-size: cover; padding: 60px 20px; display: flex; align-items: center; justify-content: center;">
+        <!-- Reduce intensity of the background image -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.6); z-index: 1;"></div>
+        
+        <div class="contact-container" style="position: relative; z-index: 2; text-align: center; color: white; max-width: 800px;">
+            <h2 style="font-size: 2.8rem; font-family: 'Roboto', sans-serif; letter-spacing: 2px; font-weight: 700; line-height: 1.3;">
+                <span style="display: block; text-transform: uppercase;">Offering</span>
+                <span style="display: block; text-transform: uppercase; color: #ffcc00;">Architectural, Construction</span>
+                <span style="display: block; text-transform: uppercase;">And Interior Services</span>
+            </h2>
+            
+            <p style="font-size: 1.8rem; font-family: 'Roboto', sans-serif; font-weight: 300; color: #fff; letter-spacing: 1px; text-transform: uppercase; margin-top: 15px;">
+                The Inspired Design of Tomorrow
+            </p>
+
+            <p style="font-size: 1.4rem; font-family: 'Open Sans', sans-serif; color: #fff; margin-top: 30px;">
+                <span style="padding: 10px 20px; background: #ffcc00; border-radius: 3px; margin-right: 10px; display: inline-block;">Innovative Designs.</span> 
+                <span style="padding: 10px 20px; background: #e63946; border-radius: 3px; margin-right: 10px; display: inline-block;">Built with Quality.</span> 
+                <span style="padding: 10px 20px; background: #457b9d; border-radius: 3px; display: inline-block;">Assured Guarantee!</span>
+            </p>
         </div>
     </section>
+
 
     <!-- Services Section -->
     <div class="services-section">
