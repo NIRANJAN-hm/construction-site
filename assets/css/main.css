@@ -2537,22 +2537,6 @@ section {
   position: relative;
 }
 
-.footer {
-  font-family: var(--footer-font);
-  color: var(--footer-default);
-  overflow-x: hidden;
-}
-
-.footer .copyright {
-  text-align: center;
-  padding-top: 30px;
-}
-
-.footer .credits {
-  text-align: center;
-  font-size: 11px;
-  color: #ccc;
-}
 
 .footer .container {
   max-width: 100%;
@@ -2611,7 +2595,7 @@ section {
 .footer .footer-content h4 {
   font-size: 16px;
   font-weight: 600;
-  color: #fff;
+  color: #ffff;
   position: relative;
   padding-bottom: 12px;
 }
@@ -2658,4 +2642,24 @@ section {
 
 .footer .footer-legal .credits a {
   color: var(--color-primary);
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: #25d366;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.whatsapp i {
+  font-size: 1.5rem;
 }
