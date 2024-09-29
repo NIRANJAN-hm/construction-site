@@ -42,7 +42,7 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="header d-flex align-items-center">
+  <header id="header" class="header">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
@@ -115,8 +115,7 @@
 
     <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
 
-      <div class="carousel-item active" style="background-image: url(assets/img/hero-carousel/hero-carousel-1.jpg)">
-      </div>
+      <div class="carousel-item active" style="background-image: url(assets/img/hero-carousel/hero-carousel-1.jpg)"></div>
       <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/hero-carousel-2.jpg)"></div>
       <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/hero-carousel-3.jpg)"></div>
       <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/hero-carousel-4.jpg)"></div>
@@ -134,25 +133,21 @@
 
   </section><!-- End Hero Section -->
 
+  <!-- ======= Who We Are Section ======= -->
+  <!-- ======= Who We Are Section ======= -->
   <section class="who-we-are">
-    <div class="container"> 
+    <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.5s">
-          <img src="images/w.webp" alt="About Us" class="img-fluid rounded">
+          <img src="images/who_are_we.png" alt="About Us" class="img-fluid rounded">
         </div>
         <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.5s">
           <div class="section-title">
             <h2>Who We Are</h2>
             <p>Building Dreams, Brick by Brick</p>
           </div>
-          <p>Sri Guru Constructions is a leading construction company dedicated to delivering 
-            exceptional projects that exceed client expectations. With a passion for innovation
-            and a commitment to quality, we strive to create structures that stand the test 
-            of time. </p>
-          <p>Our team of experienced professionals brings a wealth of knowledge and expertise 
-            to every project, ensuring seamless execution and superior craftsmanship. From 
-            conceptualization to completion, we prioritize client satisfaction and maintain 
-            open communication throughout the construction process.</p>
+          <p class="lead">"We're not just builders, we're dreamers. We're passionate about creating structures that inspire and uplift."</p>
+          <p class="quote">Our goal is to deliver exceptional projects that exceed our clients' expectations. We're committed to quality, innovation, and customer satisfaction</p>
           <div class="row">
             <div class="col-md-6">
               <ul class="list-unstyled">
@@ -167,6 +162,7 @@
               </ul>
             </div>
           </div>
+          <button class="btn btn-primary">Learn More</button>
         </div>
       </div>
     </div>
@@ -278,208 +274,149 @@
   </section>      
 
   <!-- ======= Our Projects Section ======= -->
+  <!-- ======= Our Projects Section ======= -->
   <section id="projects" class="projects">
     <div class="container" data-aos="fade-up">
-
       <div class="section-header">
         <h2>Our Projects</h2>
-        <p>Consequatur libero assumenda est voluptatem est quidem illum et officia imilique qui vel architecto
-          accusamus fugit aut qui distinctio</p>
+        <p class="quote">"Discover our exceptional portfolio, showcasing both ongoing and completed projects that reflect our dedication to quality and innovation in construction. From stunning remodels to landmark structures, we bring visions to life with precision and craftsmanship."</p>
       </div>
-
-      <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry"
-        data-portfolio-sort="original-order">
-
-        <ul class="portfolio-flters" data-aos="fade-up" data-aos-delay="100">
-          <li data-filter="*" class="filter-active">All</li>
-          <li data-filter=".filter-remodeling">Remodeling</li>
-          <li data-filter=".filter-construction">Construction</li>
-          <li data-filter=".filter-repairs">Repairs</li>
-          <li data-filter=".filter-design">Design</li>
-        </ul><!-- End Projects Filters -->
-
-        <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-remodeling">
-            <div class="portfolio-content h-100">
-              <img src="assets/img/projects/remodeling-1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Remodeling 1</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/projects/remodeling-1.jpg" title="Remodeling 1"
-                  data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link"><i
-                    class="bi bi-zoom-in"></i></a>
-                <a href="project-details.html" title="More Details" class="details-link"><i
-                    class="bi bi-link-45deg"></i></a>
+      <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-lg-12 d-flex justify-content-center">
+          <ul class="portfolio-flters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">ALL</li>
+            <li data-filter=".filter-remodeling">Ongoing-Projects</li>
+            <li data-filter=".filter-construction">Completed-Projects</li>
+          </ul>
+        </div>
+        <!-- Portfolio Item 1 -->
+        <div class="col-lg-4 col-md-6 portfolio-item filter-remodeling">
+          <div class="portfolio-content h-100">
+            <div class="project-image">
+              <div class="carousel">
+                <img src="assets/img/projects/remodeling-1.jpg" class="img-fluid" alt="">
+                <img src="assets/img/projects/remodeling-2.jpg" class="img-fluid" alt="">
+                <img src="assets/img/projects/remodeling-3.jpg" class="img-fluid" alt="">
               </div>
             </div>
-          </div><!-- End Projects Item -->
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-construction">
-            <div class="portfolio-content h-100">
-              <img src="assets/img/projects/construction-1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Construction 1</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/projects/construction-1.jpg" title="Construction 1"
-                  data-gallery="portfolio-gallery-construction" class="glightbox preview-link"><i
-                    class="bi bi-zoom-in"></i></a>
-                <a href="project-details.html" title="More Details" class="details-link"><i
-                    class="bi bi-link-45deg"></i></a>
+            <div class="portfolio-info">
+              <p><strong>Client:</strong> John Doe</p>
+              <p><strong>Site Dimension:</strong> 50*30</p>
+              <p><strong>Category:</strong> 4 BHK Luxury house</p>
+              <p><strong>Location:</strong> Bellary,Karnataka</p>
+              <a href="assets/img/projects/remodeling-1.jpg" title="Remodeling 1" data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <a href="project-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- Portfolio Item 2 -->
+        <div class="col-lg-4 col-md-6 portfolio-item filter-construction">
+          <div class="portfolio-content h-100">
+            <div class="project-image">
+              <div class="carousel">
+                <img src="assets/img/projects/construction-1.jpg" class="img-fluid" alt="">
+                <img src="assets/img/projects/construction-2.jpg" class="img-fluid" alt="">
+                <img src="assets/img/projects/construction-3.jpg" class="img-fluid" alt="">
               </div>
             </div>
-          </div><!-- End Projects Item -->
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-repairs">
-            <div class="portfolio-content h-100">
-              <img src="assets/img/projects/repairs-1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Repairs 1</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/projects/repairs-1.jpg" title="Repairs 1" data-gallery="portfolio-gallery-repairs"
-                  class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="project-details.html" title="More Details" class="details-link"><i
-                    class="bi bi-link-45deg"></i></a>
+            <div class="portfolio-info">
+              <h4>Construction 1</h4>
+              <p>Lorem ipsum, dolor sit amet consectetur</p>
+              <p><strong>Client:</strong> Jane Doe</p>
+              <p><strong>Location:</strong> Los Angeles, USA</p>
+              <p><strong>Category:</strong> Construction</p>
+              <a href="assets/img/projects/construction-1.jpg" title="Construction 1" data-gallery="portfolio-gallery-construction" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <a href="project-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- Portfolio Item 3 -->
+        <div class="col-lg-4 col-md-6 portfolio-item filter-repairs">
+          <div class="portfolio-content h-100">
+            <div class="project-image">
+              <div class="carousel">
+                <img src="assets/img/projects/repairs-1.jpg" class="img-fluid" alt="">
+                <img src="assets/img/projects/repairs-2.jpg" class="img-fluid" alt="">
+                <img src="assets/img/projects/repairs-3.jpg" class="img-fluid" alt="">
               </div>
             </div>
-          </div><!-- End Projects Item -->
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-design">
-            <div class="portfolio-content h-100">
-              <img src="assets/img/projects/design-1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Design 1</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/projects/design-1.jpg" title="Repairs 1" data-gallery="portfolio-gallery-book"
-                  class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="project-details.html" title="More Details" class="details-link"><i
-                    class="bi bi-link-45deg"></i></a>
+            <div class="portfolio-info">
+              <h4>Repairs 1</h4>
+              <p>Lorem ipsum, dolor sit amet consectetur</p>
+              <p><strong>Client:</strong> Bob Smith</p>
+              <p><strong>Location:</strong> Chicago, USA</p>
+              <p><strong>Category:</strong> Repairs</p>
+              <a href="assets/img/projects/repairs-1.jpg" title="Repairs 1" data-gallery="portfolio-gallery-repairs" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <a href="project-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- Portfolio Item 4 -->
+        <div class="col-lg-4 col-md-6 portfolio-item filter-design">
+          <div class="portfolio-content h-100">
+            <div class="project-image">
+              <div class="carousel">
+                <img src="assets/img/projects/design-1.jpg" class="img-fluid" alt="">
+                <img src="assets/img/projects/design-2.jpg" class="img-fluid" alt="">
+                <img src="assets/img/projects/design-3.jpg" class="img-fluid" alt="">
               </div>
             </div>
-          </div><!-- End Projects Item -->
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-remodeling">
-            <div class="portfolio-content h-100">
-              <img src="assets/img/projects/remodeling-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Remodeling 2</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/projects/remodeling-2.jpg" title="Remodeling 2"
-                  data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link"><i
-                    class="bi bi-zoom-in"></i></a>
-                <a href="project-details.html" title="More Details" class="details-link"><i
-                    class="bi bi-link-45deg"></i></a>
+            <div class="portfolio-info">
+              <h4>Design 1</h4>
+              <p>Lorem ipsum, dolor sit amet consectetur</p>
+              <p><strong>Client:</strong> Alice Johnson</p>
+              <p><strong>Location:</strong> San Francisco, USA</p>
+              <p><strong>Category:</strong> Design</p>
+              <a href="assets/img/projects/design-1.jpg" title="Design 1" data-gallery="portfolio-gallery-design" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <a href="project-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- Portfolio Item 5 -->
+        <div class="col-lg-4 col-md-6 portfolio-item filter-consultation">
+          <div class="portfolio-content h-100">
+            <div class="project-image">
+              <div class="carousel">
+                <img src="images/exterior_design.jpg" class="img-fluid" alt="">
+                <img src="images/commercial.jpg" class="img-fluid" alt="">
+                <img src="images/facade-modern-house.jpg" class="img-fluid" alt="">
               </div>
             </div>
-          </div><!-- End Projects Item -->
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-construction">
-            <div class="portfolio-content h-100">
-              <img src="assets/img/projects/construction-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Construction 2</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/projects/construction-2.jpg" title="Construction 2"
-                  data-gallery="portfolio-gallery-construction" class="glightbox preview-link"><i
-                    class="bi bi-zoom-in"></i></a>
-                <a href="project-details.html" title="More Details" class="details-link"><i
-                    class="bi bi-link-45deg"></i></a>
+            <div class="portfolio-info">
+              <h4>Consultation 1</h4>
+              <p>Lorem ipsum, dolor sit amet consectetur</p>
+              <p><strong>Client:</strong> Mike Brown</p>
+              <p><strong>Location:</strong> New York, USA</p>
+              <p><strong>Category:</strong> Consultation</p>
+              <a href="assets/img/projects/consultation-1.jpg" title="Consultation 1" data-gallery="portfolio-gallery-consultation" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <a href="project-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- Portfolio Item 6 -->
+        <div class="col-lg-4 col-md-6 portfolio-item filter-remodeling">
+          <div class="portfolio-content h-100">
+            <div class="project-image">
+              <div class="carousel">
+                <img src="assets/img/projects/remodeling-2.jpg" class="img-fluid" alt="">
+                <img src="assets/img/projects/remodeling-3.jpg" class="img-fluid" alt="">
+                <img src="assets/img/projects/remodeling-4.jpg" class="img-fluid" alt="">
               </div>
             </div>
-          </div><!-- End Projects Item -->
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-repairs">
-            <div class="portfolio-content h-100">
-              <img src="assets/img/projects/repairs-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Repairs 2</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/projects/repairs-2.jpg" title="Repairs 2" data-gallery="portfolio-gallery-repairs"
-                  class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="project-details.html" title="More Details" class="details-link"><i
-                    class="bi bi-link-45deg"></i></a>
-              </div>
+            <div class="portfolio-info">
+              <h4>Remodeling 2</h4>
+              <p>Lorem ipsum, dolor sit amet consectetur</p>
+              <p><strong>Client:</strong> Sarah Lee</p>
+              <p><strong>Location:</strong> Miami, USA</p>
+              <p><strong>Category:</strong> Remodeling</p>
+              <a href="assets/img/projects/remodeling-2.jpg" title="Remodeling 2" data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              <a href="project-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
             </div>
-          </div><!-- End Projects Item -->
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-design">
-            <div class="portfolio-content h-100">
-              <img src="assets/img/projects/design-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Design 2</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/projects/design-2.jpg" title="Repairs 2" data-gallery="portfolio-gallery-book"
-                  class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="project-details.html" title="More Details" class="details-link"><i
-                    class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-          </div><!-- End Projects Item -->
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-remodeling">
-            <div class="portfolio-content h-100">
-              <img src="assets/img/projects/remodeling-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Remodeling 3</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/projects/remodeling-3.jpg" title="Remodeling 3"
-                  data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link"><i
-                    class="bi bi-zoom-in"></i></a>
-                <a href="project-details.html" title="More Details" class="details-link"><i
-                    class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-          </div><!-- End Projects Item -->
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-construction">
-            <div class="portfolio-content h-100">
-              <img src="assets/img/projects/construction-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Construction 3</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/projects/construction-3.jpg" title="Construction 3"
-                  data-gallery="portfolio-gallery-construction" class="glightbox preview-link"><i
-                    class="bi bi-zoom-in"></i></a>
-                <a href="project-details.html" title="More Details" class="details-link"><i
-                    class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-          </div><!-- End Projects Item -->
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-repairs">
-            <div class="portfolio-content h-100">
-              <img src="assets/img/projects/repairs-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Repairs 3</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/projects/repairs-3.jpg" title="Repairs 2" data-gallery="portfolio-gallery-repairs"
-                  class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="project-details.html" title="More Details" class="details-link"><i
-                    class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-          </div><!-- End Projects Item -->
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-design">
-            <div class="portfolio-content h-100">
-              <img src="assets/img/projects/design-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Design 3</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/projects/design-3.jpg" title="Repairs 3" data-gallery="portfolio-gallery-book"
-                  class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="project-details.html" title="More Details" class="details-link"><i
-                    class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-          </div><!-- End Projects Item -->
-
-        </div><!-- End Projects Container -->
-
+          </div>
+        </div>
       </div>
-
     </div>
-  </section><!-- End Our Projects Section -->
+  </section>
 
   <!-- ======= Testimonials Section ======= -->
   <section id="testimonials" class="testimonials section-bg">
@@ -487,8 +424,7 @@
 
       <div class="section-header">
         <h2>Testimonials</h2>
-        <p>Quam sed id excepturi ccusantium dolorem ut quis dolores nisi llum nostrum enim velit qui ut et autem uia
-          reprehenderit sunt deleniti</p>
+        <p class="quote">"See what our clients are saying! Their experiences speak volumes about our commitment to excellence and customer satisfaction. Join the growing list of satisfied customers who have transformed their visions into reality with our expert guidance and quality craftsmanship."</p>
       </div>
 
       <div class="slides-2 swiper">
@@ -888,7 +824,39 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    // Get the header element
+    const header = document.getElementById('header');
 
+    // Add an event listener to the window's scroll event
+    window.addEventListener('scroll', () => {
+      // Check if the window has scrolled down
+      if (window.scrollY > 100) {
+        // Add the 'scrolled' class to the header
+        header.classList.add('scrolled');
+      } else {
+        // Remove the 'scrolled' class from the header
+        header.classList.remove('scrolled');
+      }
+    });
+    
+    
+    const carousels = document.querySelectorAll('.carousel');
+
+    carousels.forEach(carousel => {
+      let index = 0;
+      const images = carousel.querySelectorAll('img');
+      
+      function showNextImage() {
+        index = (index + 1) % images.length; // Loop back to the first image
+        carousel.style.transform = `translateX(-${index * 100}%)`;
+      }
+
+      setInterval(showNextImage, 2000); // Change image every 3 seconds
+    });
+
+
+
+  </script>
 </body>
-
 </html>
