@@ -262,11 +262,30 @@ section {
   right: 0;
   z-index: 9999;
   transition: background-color 0.3s ease-in-out;
+  background-size: cover; /* Ensure the background image covers the header */
+  background-position: center; /* Center the background image */
+  height: 80px; /* Adjust height as needed */
 }
 
 .header.scrolled {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.9); /* Optional: Make the background semi-transparent on scroll */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main {
+  padding-top: 80px; /* Keep this to avoid content being hidden under the fixed header */
+}
+
+/* Optional: Style for breadcrumbs */
+.breadcrumbs {
+  margin-top: -80px; /* Pulls breadcrumbs into header */
+  z-index: 1; /* Make sure it appears above the header background */
+}
+
+.breadcrumbs h2,
+.breadcrumbs ol {
+  position: relative;
+  z-index: 2; /* Ensure text is above the background */
 }
 
 .header.scrolled .logo h1,
@@ -739,6 +758,7 @@ main {
     margin-bottom: 30px;
   }
 }
+
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
@@ -812,6 +832,7 @@ main {
 /*--------------------------------------------------------------
 # Why choose Us
 --------------------------------------------------------------*/
+
 .why-choose-us {
   padding: 40px 20px;
   text-align: center;
@@ -2812,3 +2833,5 @@ main {
 .whatsapp i {
   font-size: 1.5rem;
 }
+
+
