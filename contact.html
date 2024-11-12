@@ -38,82 +38,457 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
   <style>
-    body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #4e54c8, #8f94fb);
-    margin: 0;
+  *, *:before, *:after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.reachus{
+  background: linear-gradient(to right, #ea1d6f 0%, #eb466b 100%);
+  font-size: 12px;
+  display: flex;
+  min-height: 75vh;
+}
+
+body, button, input {
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+.container {
+  flex: 0 1 700px;
+  margin: auto;
+  padding: 10px;
+}
+
+.screen {
+  position: relative;
+  background: #3e3e3e;
+  border-radius: 15px;
+}
+
+.screen:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  bottom: 0;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+  z-index: -1;
+}
+
+.screen-header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: #4d4d4f;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.screen-header-left {
+  margin-right: auto;
+}
+
+.screen-header-button {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 3px;
+  border-radius: 8px;
+  background: white;
+}
+
+.screen-header-button.close {
+  background: #ed1c6f;
+}
+
+.screen-header-button.maximize {
+  background: #e8e925;
+}
+
+.screen-header-button.minimize {
+  background: #74c54f;
+}
+
+.screen-header-right {
+  display: flex;
+}
+
+.screen-header-ellipsis {
+  width: 3px;
+  height: 3px;
+  margin-left: 2px;
+  border-radius: 8px;
+  background: #999;
+}
+
+.screen-body {
+  display: flex;
+}
+
+.screen-body-item {
+  flex: 1;
+  padding: 50px;
+}
+
+.screen-body-item.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-title {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: #ea1d6f;
+  font-size: 26px;
+}
+
+.app-title:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 25px;
+  height: 4px;
+  background: #ea1d6f;
+}
+
+.app-contact {
+  margin-top: auto;
+  font-size: 8px;
+  color: #888;
+}
+
+.app-form-group {
+  margin-bottom: 15px;
+}
+
+.app-form-group.message {
+  margin-top: 40px;
+}
+
+.app-form-group.buttons {
+  margin-bottom: 0;
+  text-align: right;
+}
+
+.app-form-control {
+  width: 100%;
+  padding: 10px 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #666;
+  color: #ddd;
+  font-size: 14px;
+  text-transform: uppercase;
+  outline: none;
+  transition: border-color .2s;
+}
+
+.app-form-control::placeholder {
+  color: #666;
+}
+
+.app-form-control:focus {
+  border-bottom-color: #ddd;
+}
+
+.app-form-button {
+  background: none;
+  border: none;
+  color: #ea1d6f;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+  text-align: center;
+}
+
+.app-form-button:hover {
+  color: #b9134f;
+}
+
+.credits {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  color: #ffa4bd;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.credits-link {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.dribbble {
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+}
+
+@media screen and (max-width: 520px) {
+  .screen-body {
+    flex-direction: column;
+  }
+
+  .screen-body-item.left {
+    margin-bottom: 30px;
+  }
+
+  .app-title {
+    flex-direction: row;
+  }
+
+  .app-title span {
+    margin-right: 12px;
+  }
+
+  .app-title:after {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .screen-body {
+    padding: 40px;
+  }
+
+  .screen-body-item {
     padding: 0;
+  }
 }
 
-.contact-container {
-    width: 90%;
-    max-width: 600px;
-    margin: auto;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    margin-top: 80px;
+#contact-info {
+  padding: 30px 0;
 }
 
-.contact-header {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
+.c-info {
+  padding: 30px;
+  text-align: center;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
 }
 
-.contact-form-group {
-    margin-bottom: 20px;
+.c-info i {
+  color: #29d9c2;
+  font-size: 45px;
+  margin: 0 0 15px;
 }
 
-.contact-label {
-    display: block;
-    margin-bottom: 8px;
-    color: #555;
+.c-info h5 {
+  text-transform: uppercase;
+  font-size: 16px;
+  margin: 15px 0 7px;
 }
 
-.contact-input,
-.contact-textarea {
+.space50 {
+    margin-bottom: 50px;
+}
+.col-md-offset-2 {
+    margin-left: 16.66666667%;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .container {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    transition: border-color 0.3s, box-shadow 0.3s;
+    max-width: 750px;
+  }
+
+  #contact-info .col-sm-6 {
+    margin-bottom: 20px;
+  }
 }
 
-.contact-input:focus,
-.contact-textarea:focus {
-    border-color: #4e54c8;
-    box-shadow: 0 0 5px rgba(78, 84, 200, 0.5);
-    outline: none;
+@media only screen and (min-width: 280px) and (max-width: 767px) {
+  #contact-info .col-sm-6 {
+    margin-bottom: 20px;
+  }
 }
 
-.contact-button {
-    width: 100%;
-    padding: 12px;
-    background-color: #4e54c8;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+.site-footer
+{
+  background-color:#26272b;
+  padding:45px 0 20px;
+  font-size:15px;
+  line-height:24px;
+  color:#737373;
+}
+.site-footer hr
+{
+  border-top-color:#bbb;
+  opacity:0.5
+}
+.site-footer hr.small
+{
+  margin:20px 0
+}
+.site-footer h6
+{
+  color:#fff;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+.site-footer a
+{
+  color:#737373;
+}
+.site-footer a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}
+.footer-links li
+{
+  display:block
+}
+.footer-links a
+{
+  color:#737373
+}
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links.inline li
+{
+  display:inline-block
+}
+.site-footer .social-icons
+{
+  text-align:right
+}
+.site-footer .social-icons a
+{
+  width:40px;
+  height:40px;
+  line-height:40px;
+  margin-left:6px;
+  margin-right:0;
+  border-radius:100%;
+  background-color:#33353d
+}
+.copyright-text
+{
+  margin:0
 }
 
-.contact-button:hover {
-    background-color: #3d43a1;
-    transform: translateY(-2px);
+@media (max-width:991px)
+{
+  .site-footer [class^=col-]
+  {
+    margin-bottom:30px
+  }
+}
+@media (max-width:767px)
+{
+  .site-footer
+  {
+    padding-bottom:0
+  }
+  .site-footer .copyright-text,.site-footer .social-icons
+  {
+    text-align:center
+  }
+}
+.social-icons
+{
+  padding-left:0;
+  margin-bottom:0;
+  list-style:none
+}
+.social-icons li
+{
+  display:inline-block;
+  margin-bottom:4px
+}
+.social-icons li.title
+{
+  margin-right:15px;
+  text-transform:uppercase;
+  color:#96a2b2;
+  font-weight:700;
+  font-size:13px
+}
+.social-icons a{
+  background-color:#eceeef;
+  color:#818a91;
+  font-size:16px;
+  display:inline-block;
+  line-height:44px;
+  width:44px;
+  height:44px;
+  text-align:center;
+  margin-right:8px;
+  border-radius:100%;
+  -webkit-transition:all .2s linear;
+  -o-transition:all .2s linear;
+  transition:all .2s linear
+}
+.social-icons a:active,.social-icons a:focus,.social-icons a:hover
+{
+  color:#fff;
+  background-color:#29aafe
+}
+.social-icons.size-sm a
+{
+  line-height:34px;
+  height:34px;
+  width:34px;
+  font-size:14px
+}
+.social-icons a.facebook:hover
+{
+  background-color:#3b5998
+}
+.social-icons a.twitter:hover
+{
+  background-color:#00aced
+}
+.social-icons a.linkedin:hover
+{
+  background-color:#007bb6
+}
+.social-icons a.dribbble:hover
+{
+  background-color:#ea4c89
+}
+@media (max-width:767px)
+{
+  .social-icons li.title
+  {
+    display:block;
+    margin-right:0;
+    font-weight:600
+  }
 }
 
-.contact-button:active {
-    transform: translateY(0);
-}
+</style>
+</head>
+<body>
 
 
 
-    
 
-   
 
 
   </style>
@@ -174,69 +549,107 @@
 
       </div>
     </div><!-- End Breadcrumbs -->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-          <div class="col-lg-6">
-            <div class="info-item  d-flex flex-column justify-content-center align-items-center">
-              <i class="bi bi-map"></i>
-              <h3>Our Address</h3>
-              <p>A108 Adam Street, New York, NY 535022</p>
-            </div>
-          </div><!-- End Info Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="info-item d-flex flex-column justify-content-center align-items-center">
-              <i class="bi bi-envelope"></i>
-              <h3>Email Us</h3>
-              <p>contact@example.com</p>
-            </div>
-          </div><!-- End Info Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="info-item  d-flex flex-column justify-content-center align-items-center">
-              <i class="bi bi-telephone"></i>
-              <h3>Call Us</h3>
-              <p>+1 5589 55488 55</p>
-            </div>
-          </div><!-- End Info Item -->
-
-        </div>
-
-
-        </div>
-
+  </main>
+  <form class="gform pure-form pure-form-stacked" method="POST" data-email="nir.contactus@gmail.com" 
+  action="https://script.google.com/macros/s/AKfycbz1Maj89Y23Qdo7JYYgkZPGCCm-iRdr0zh8hFbi3KbtCHPLdjKziv5u8r4QNl-ChIH8jA/exec" 
+  onSubmit="alert('Thank you for your request.');"> 
+  <div class="reachus">
+      <div class="container">
+          <div class="screen">
+              <div class="screen-header">
+                  <div class="screen-header-left">
+                      <div class="screen-header-button close"></div>
+                      <div class="screen-header-button maximize"></div>
+                      <div class="screen-header-button minimize"></div>
+                  </div>
+                  <div class="screen-header-right">
+                      <div class="screen-header-ellipsis"></div>
+                      <div class="screen-header-ellipsis"></div>
+                      <div class="screen-header-ellipsis"></div>
+                  </div>
+              </div>
+              <div class="screen-body">
+                  <div class="screen-body-item left">
+                      <div class="app-title">
+                          <span>CONTACT</span>
+                          <span>US</span>
+                      </div>
+                      <div class="app-contact">CONTACT INFO : +91 77954 44954</div>
+                  </div>
+                  <div class="screen-body-item">
+                      <div class="app-form">
+                          <div class="app-form-group">
+                              <input class="app-form-control" type="text" name="name" placeholder="NAME">
+                          </div>
+                          <div class="app-form-group">
+                              <input class="app-form-control" type="email" name="email" required="" placeholder="EMAIL">
+                          </div>
+                          <div class="app-form-group">
+                              <input class="app-form-control" type="tel" name="phone" placeholder="CONTACT NO">
+                          </div>
+                          <div class="app-form-group">
+                              <!-- Dropdown for Services Required -->
+                              <select class="app-form-control" name="service" required="">
+                                  <option value="">Select Service</option>
+                                  <option value="Interior Design">Interior Design</option>
+                                  <option value="Exterior Design">Exterior Design</option>
+                                  <option value="Pre Design">Pre Design</option>
+                                  <option value="Residential">Residential</option>
+                                  <option value="Commercial">Commercial</option>
+                                  <option value="Renovation">Renovation</option>
+                                  <option value="Consultation">Consultation</option>
+                              </select>
+                          </div>
+                          <div class="app-form-group buttons">
+                              <button class="app-form-button">REQUEST QUOTE</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
-    </section><!-- End Contact Section -->
-   <div class="contact-container">
-      <h1 class="contact-header">Contact Us</h1>
-      <form id="construction-contact-form" action="#" method="POST">
-          <div class="contact-form-group">
-              <label class="contact-label" for="contact-name">Name:</label>
-              <input class="contact-input" type="text" id="contact-name" name="name" required>
-          </div>
-          <div class="contact-form-group">
-              <label class="contact-label" for="contact-email">Email:</label>
-              <input class="contact-input" type="email" id="contact-email" name="email" required>
-          </div>
-          <div class="contact-form-group">
-              <label class="contact-label" for="contact-phone">Phone:</label>
-              <input class="contact-input" type="tel" id="contact-phone" name="phone" required>
-          </div>
-          <div class="contact-form-group">
-              <label class="contact-label" for="contact-message">Message:</label>
-              <textarea class="contact-textarea" id="contact-message" name="message" rows="5" required></textarea>
-          </div>
-          <button class="contact-button" id="submit-contact" type="submit">Submit</button>
-      </form>
   </div>
-  
- 
-  </main><!-- End #main -->
+</form>
 
+<section id="contact" class="contact">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-4">
+      <div class="col-lg-6">
+        <div class="info-item  d-flex flex-column justify-content-center align-items-center">
+          <i class="bi bi-map"></i>
+          <h3>Our Address</h3>
+          <p>Ward no. 09 near sunklamma temple road, Andralu Ballari 583101</p>
+        </div>
+      </div><!-- End Info Item -->
+
+      <div class="col-lg-3 col-md-6">
+        <div class="info-item d-flex flex-column justify-content-center align-items-center">
+          <i class="bi bi-envelope"></i>
+          <h3>Email Us</h3>
+          <p>sriguruconsultancy05@gmail.com</p>
+        </div>
+      </div><!-- End Info Item -->
+
+      <div class="col-lg-3 col-md-6">
+        <div class="info-item  d-flex flex-column justify-content-center align-items-center">
+          <i class="bi bi-telephone"></i>
+          <h3>Call Us</h3>
+          <p>+91 7795 444 954</p>
+        </div>
+      </div><!-- End Info Item -->
+    </div>
+
+    <div class="row gy-4 mt-1">
+      <div class="col-lg-12 d-flex justify-content-center">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
+                frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+      </div><!-- End Google Maps -->
+    </div>
+  </div>
+</section>
+
+       
+ 
  <!-- ======= Footer ======= -->
  <footer id="footer" class="footer">
 
@@ -251,7 +664,7 @@
               Bellary<br>
               Karnataka-583101<br><br>
               <strong>Phone:</strong>+91 7795 444 954<br>
-              <strong>Email:</strong> srigurunstructions@gmail.com <br>
+              <strong>Email:</strong>sriguruconsultancy05@gmail.com<br>
             </p>
             <div class="social-links d-flex mt-3">
               <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-twitter"></i></a>
@@ -333,8 +746,6 @@
 </footer>
 <!-- End Footer -->
 
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
 
   <div id="preloader"></div>
 
