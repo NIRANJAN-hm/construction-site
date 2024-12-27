@@ -526,8 +526,8 @@ body, button, input {
             </ul>
           </li>
           <li><a href="projects.html">Projects</a></li>
-          <li><a href="services.html">Materials</a></li>
-          <li><a href="projects.html">Contact Us</a></li>
+          <li><a href="materials.html">Materials</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
           <li><a href="blog.html">FAQ's</a></li>
         </ul>
       </nav><!-- .navbar -->
@@ -760,7 +760,86 @@ body, button, input {
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    const express = require("express");
+    const bodyParser = require("body-parser");
+    const axios = require("axios");
 
-</body>
+    const app = express();
+    const PORT = 3000;
 
+    // Middleware
+    app.use(bodyParser.json());
+
+    // Endpoint to handle form submission
+    app.post("/submit-form", async (req, res) => {
+      const { name, email, message } = req.body;
+
+      if (!name || !email || !message) {
+        return res.status(400).json({ error: "All fields are required!" });
+      }
+
+      try {
+        // Send data to WhatsApp
+        const whatsappResponse = await sendToWhatsApp(name, email, message);
+
+        // Add data to Google Sheets
+        const sheetsResponse = await addToGoogleSheets(name, email, message);
+
+        res.json({
+          success: true,
+          message: "Form submitted successfully!",
+          whatsapp: whatsappResponse,
+          sheets: sheetsResponse,
+        });
+      } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Something went wrong!" });
+      }
+    });
+
+    // Function to send data to WhatsApp
+    async function sendToWhatsApp(name, email, message) {
+      const whatsappApiUrl = "https://api.twilio.com/your-whatsapp-endpoint";
+      const body = {
+        to: "whatsapp:+917829433636", // Replace with your number
+        from: "whatsapp:+919739577097", // Your Twilio WhatsApp number
+        body: `New Contact Form Submission:\nName: ${name}\nEmail: ${email}\nMessage: ${message}`,
+      };
+
+      const response = await axios.post(whatsappApiUrl, body, {
+        auth: {
+          username: "your-twilio-sid",
+          password: "your-twilio-auth-token",
+        },
+      });
+
+      return response.data;
+    }
+
+    // Function to add data to Google Sheets
+    async function addToGoogleSheets(name, email, message) {
+      const googleSheetsApiUrl =
+        "https://docs.google.com/spreadsheets/d/1XziIxheV6n1y5WuO5JIR1Zl73c1vgRQnhVcRBi9YkNg/edit?gid=0#gid=0";
+      const apiKey = "YOUR_GOOGLE_API_KEY";
+
+      const body = {
+        values: [[name, email, message]],
+      };
+
+      const response = await axios.post(
+        `${googleSheetsApiUrl}?valueInputOption=RAW&key=${apiKey}`,
+        body
+      );
+
+      return response.data;
+    }
+
+    // Start the server
+    app.listen(PORT, () => {
+      console.log(`Server running on http://localhost:${PORT}`);
+    });
+
+      </script>
+  </body>
 </html>
