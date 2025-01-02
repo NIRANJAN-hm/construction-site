@@ -57,22 +57,22 @@
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="blog.html">Blog</a></li>
           <li class="dropdown"><a href="#"><span>Services</span> <i
                 class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a class="dropdown-item" href="event.html">Interior Design</a></li>
-              <li><a class="dropdown-item" href="restoration.html">Exterior Design</a></li>
-              <li><a class="dropdown-item" href="corporate.html">Pre Design</a></li>
-              <li><a class="dropdown-item" href="frame.html">Residential</a></li>
-              <li><a class="dropdown-item" href="family.html">Commercial</a></li>
-              <li><a class="dropdown-item" href="album.html">Renovation</a></li>
-              <li><a class="dropdown-item" href="album.html">Consultation</a></li>
+              <li><a class="dropdown-item" href="interior.html">Interior Design</a></li>
+              <li><a class="dropdown-item" href="#">Exterior Design</a></li>
+              <li><a class="dropdown-item" href="#">Pre Design</a></li>
+              <li><a class="dropdown-item" href="#">Residential</a></li>
+              <li><a class="dropdown-item" href="#">Commercial</a></li>
+              <li><a class="dropdown-item" href="#">Renovation</a></li>
+              <li><a class="dropdown-item" href="#">Consultation</a></li>
             </ul>
           </li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="services.html">Materials</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="blog.html">FAQ's</a></li>
         </ul>
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
@@ -245,7 +245,7 @@
           </div>
       </div> 
 
-      <!-- how-to-start -->
+  <!-- how-to-start -->
   <section class="how-to-start-section">
     <h2>How to Start</h2>
     <p>Follow these four simple steps to get started on your journey with our platform and make the most of the opportunities available.</p>
@@ -273,7 +273,6 @@
       </div>
   </section>      
 
-  <!-- ======= Our Projects Section ======= -->
   <!-- ======= Our Projects Section ======= -->
   <section id="projects" class="projects">
     <div class="container" data-aos="fade-up">
@@ -417,6 +416,24 @@
       </div>
     </div>
   </section>
+
+  <!-- ======= Stats Counter Section ======= -->
+  <section id="stats-counter" class="stats-counter section-bg">
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-item d-flex align-items-center w-100 h-100">
+            <i class="bi bi-emoji-smile color-blue flex-shrink-0"></i>
+            <div>
+              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
+                class="purecounter"></span>
+              <p>Happy Clients</p>
+            </div>
+          </div>
+        </div><!-- End Stats Item -->
+        
 
   <!-- ======= Testimonials Section ======= -->
   <section id="testimonials" class="testimonials section-bg">
@@ -598,11 +615,9 @@
     </div>
   </section>
 
-    <!-- ======= Recent Blog Posts Section ======= -->
-    <section id="recent-blog-posts" class="recent-blog-posts">
-      <div class="container" data-aos="fade-up"">
-
-    
+  <!-- ======= Recent Blog Posts Section ======= -->
+  <section id="recent-blog-posts" class="recent-blog-posts">
+    <div class="container" data-aos="fade-up">
     
   <div class=" section-header">
         <h2>Recent Blog Posts</h2>
@@ -743,9 +758,9 @@
           <div class="col-lg-2 col-md-3 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Services</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About us</a></li>
+              <li><a href="services.html">Services</a></li>
               <li><a href="#">Terms of service</a></li>
               <li><a href="#">Privacy policy</a></li>
             </ul>
@@ -755,7 +770,7 @@
             <h4>Our Services</h4>
             <ul>
               <li><a href="#">Pre-Design</a></li>
-              <li><a href="#">Interior Design</a></li>
+              <li><a href="interior.html">Interior Design</a></li>
               <li><a href="#">Exterior Design</a></li>
               <li><a href="#">Furniture</a></li>
               <li><a href="#">Residential</a></li>
@@ -855,8 +870,30 @@
       setInterval(showNextImage, 2000); // Change image every 3 seconds
     });
 
+    document.addEventListener('DOMContentLoaded', function () {
+    const mobileNavShow = document.querySelector('.mobile-nav-show');
+    const mobileNavHide = document.querySelector('.mobile-nav-hide');
+    const navbar = document.querySelector('.navbar');
 
+    mobileNavShow.addEventListener('click', function () {
+      navbar.classList.add('mobile-nav-active');
+    });
 
+    mobileNavHide.addEventListener('click', function () {
+      navbar.classList.remove('mobile-nav-active');
+    });
+
+    document.querySelectorAll('.navbar .dropdown > a').forEach(function (dropdown) {
+      dropdown.addEventListener('click', function (e) {
+        if (navbar.classList.contains('mobile-nav-active')) {
+          e.preventDefault();
+          this.nextElementSibling.classList.toggle('dropdown-active');
+        }
+      });
+
+      
+    });
+  });
   </script>
 </body>
 </html>
