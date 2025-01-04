@@ -1,5 +1,5 @@
 /**
-* Template Name: UpConstruction - v1.3.0
+* Template Name: Sri Guru Constructions
 * Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
@@ -2834,4 +2834,92 @@ main {
   font-size: 1.5rem;
 }
 
+.package-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+}
 
+.package-section h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.package-section p {
+  font-size: 1.2em;
+  color: #666;
+}
+
+.package-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.package-card {
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  width: 250px;
+  text-align: left;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.package-card h2 {
+  font-size: 1.2em;
+  color: #fff;
+  background-color: #d46941;
+  padding: 10px;
+  margin: -15px -15px 10px -15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.package-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.package-card ul li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.package-card ul li span {
+  color: #d46941;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.package-card button {
+  background-color: #d46941;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.package-card button:hover {
+  background-color: #b55336;
+}
+
+/* Styling for the package images */
+.package-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Rounded corners */
+  margin-bottom: 15px; /* Space between image and content */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds a slight shadow */
+}
