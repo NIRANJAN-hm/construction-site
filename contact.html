@@ -678,9 +678,11 @@ body, button, input {
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Useful Links</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">contact us</a></li>
+            <li><a href="services.html">faqs</a></li>
             <li><a href="#">Terms of service</a></li>
             <li><a href="#">Privacy policy</a></li>
           </ul>
@@ -689,14 +691,14 @@ body, button, input {
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Our Services</h4>
           <ul>
-            <li><a href="#">Pre-Design</a></li>
-            <li><a href="#">Interior Design</a></li>
-            <li><a href="#">Exterior Design</a></li>
+            <li><a href="pre-design.html">Pre-Design</a></li>
+            <li><a href="interior.html">Interior Design</a></li>
+            <li><a href="exterior.html">Exterior Design</a></li>
             <li><a href="#">Furniture</a></li>
-            <li><a href="#">Residential</a></li>
-            <li><a href="#">Commercial</a></li>
-            <li><a href="#">Renovation</a></li>
-            <li><a href="#">Consultation</a></li>
+            <li><a href="residential.html">Residential</a></li>
+            <li><a href="commercial.html">Commercial</a></li>
+            <li><a href="renovation.html">Renovation</a></li>
+            <li><a href="consultation.html">Consultation</a></li>
           </ul>
         </div><!-- End footer links column-->
 
@@ -760,86 +762,118 @@ body, button, input {
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script>
-    const express = require("express");
-    const bodyParser = require("body-parser");
-    const axios = require("axios");
-
-    const app = express();
-    const PORT = 3000;
-
-    // Middleware
-    app.use(bodyParser.json());
-
-    // Endpoint to handle form submission
-    app.post("/submit-form", async (req, res) => {
-      const { name, email, message } = req.body;
-
-      if (!name || !email || !message) {
-        return res.status(400).json({ error: "All fields are required!" });
-      }
-
-      try {
-        // Send data to WhatsApp
-        const whatsappResponse = await sendToWhatsApp(name, email, message);
-
-        // Add data to Google Sheets
-        const sheetsResponse = await addToGoogleSheets(name, email, message);
-
-        res.json({
-          success: true,
-          message: "Form submitted successfully!",
-          whatsapp: whatsappResponse,
-          sheets: sheetsResponse,
-        });
-      } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: "Something went wrong!" });
-      }
-    });
-
-    // Function to send data to WhatsApp
-    async function sendToWhatsApp(name, email, message) {
-      const whatsappApiUrl = "https://api.twilio.com/your-whatsapp-endpoint";
-      const body = {
-        to: "whatsapp:+917829433636", // Replace with your number
-        from: "whatsapp:+919739577097", // Your Twilio WhatsApp number
-        body: `New Contact Form Submission:\nName: ${name}\nEmail: ${email}\nMessage: ${message}`,
-      };
-
-      const response = await axios.post(whatsappApiUrl, body, {
-        auth: {
-          username: "your-twilio-sid",
-          password: "your-twilio-auth-token",
-        },
-      });
-
-      return response.data;
-    }
-
-    // Function to add data to Google Sheets
-    async function addToGoogleSheets(name, email, message) {
-      const googleSheetsApiUrl =
-        "https://docs.google.com/spreadsheets/d/1XziIxheV6n1y5WuO5JIR1Zl73c1vgRQnhVcRBi9YkNg/edit?gid=0#gid=0";
-      const apiKey = "YOUR_GOOGLE_API_KEY";
-
-      const body = {
-        values: [[name, email, message]],
-      };
-
-      const response = await axios.post(
-        `${googleSheetsApiUrl}?valueInputOption=RAW&key=${apiKey}`,
-        body
-      );
-
-      return response.data;
-    }
-
-    // Start the server
-    app.listen(PORT, () => {
-      console.log(`Server running on http://localhost:${PORT}`);
-    });
-
-      </script>
+  
+  <script data-cfasync="false" type="text/javascript">
+    
+    (function() {
+   function validEmail(email) {
+     var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+     return re.test(email);
+   }
+ 
+   function validateHuman(honeypot) {
+     if (honeypot) {
+       console.log("Robot Detected!");
+       return true;
+     } else {
+       console.log("Welcome Human!");
+     }
+   }
+   function getFormData(form) {
+     var elements = form.elements;
+ 
+     var fields = Object.keys(elements).filter(function(k) {
+           return (elements[k].name !== "honeypot");
+     }).map(function(k) {
+       if(elements[k].name !== undefined) {
+         return elements[k].name;
+       }else if(elements[k].length > 0){
+         return elements[k].item(0).name;
+       }
+     }).filter(function(item, pos, self) {
+       return self.indexOf(item) == pos && item;
+     });
+ 
+     var formData = {};
+     fields.forEach(function(name){
+       var element = elements[name];
+       formData[name] = element.value;
+       if (element.length) {
+         var data = [];
+         for (var i = 0; i < element.length; i++) {
+           var item = element.item(i);
+           if (item.checked || item.selected) {
+             data.push(item.value);
+           }
+         }
+         formData[name] = data.join(', ');
+       }
+     });
+ 
+     // add form-specific values into the data
+     formData.formDataNameOrder = JSON.stringify(fields);
+     formData.formGoogleSheetName = form.dataset.sheet || "sheetname"; // default sheet name
+     formData.formGoogleSendEmail = form.dataset.email || ""; // no email by default
+ 
+     console.log(formData);
+     return formData;
+   }
+ 
+   function handleFormSubmit(event) {  
+     event.preventDefault();           
+     var form = event.target;
+     var data = getFormData(form);         
+     if( data.email && !validEmail(data.email) ) {   
+       var invalidEmail = form.querySelector(".email-invalid");
+       if (invalidEmail) {
+         invalidEmail.style.display = "block";
+         return false;
+       }
+     } else {
+       disableAllButtons(form);
+       var url = form.action;
+       var xhr = new XMLHttpRequest();
+       xhr.open('POST', url);
+       xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+       xhr.onreadystatechange = function() {
+           console.log(xhr.status, xhr.statusText);
+           console.log(xhr.responseText);
+           var formElements = form.querySelector(".form-elements")
+           if (formElements) {
+             formElements.style.display = "none"; // hide form
+           }
+           var thankYouMessage = form.querySelector(".thankyou_message");
+           if (thankYouMessage) {
+             thankYouMessage.style.display = "block";
+           }
+           return;
+       };
+       var encoded = Object.keys(data).map(function(k) {
+           return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
+       }).join('&');
+       xhr.send(encoded);
+     }
+   }
+   
+   function loaded() {
+     console.log("Contact form submission handler loaded successfully.");
+     var forms = document.querySelectorAll("form.gform");
+     for (var i = 0; i < forms.length; i++) {
+       forms[i].addEventListener("submit", handleFormSubmit, false);
+     }
+   };
+   document.addEventListener("DOMContentLoaded", loaded, false);
+ 
+   function disableAllButtons(form) {
+     var buttons = form.querySelectorAll("button");
+     for (var i = 0; i < buttons.length; i++) {
+       buttons[i].disabled = true;
+     }
+   }
+ })();
+ 
+ 
+   </script>
+ 
   </body>
 </html>
